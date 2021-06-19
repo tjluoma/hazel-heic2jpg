@@ -55,18 +55,7 @@ do
 
 			else
 
-				if [[ "$i:e:l" == "heic" ]]
-				then
-
-					echo "$NAME: 'sips' converting '$i' to '$JPG'..." | tee -a "$LOG"
-
-					sips -s format jpeg "${i}" --out "$JPG" 2>&1 | tee -a "$LOG"
-
-				else
-
-					echo "$NAME: '$i:e' is neither 'HEIC' nor 'heic'. Skipping." | tee -a "$LOG"
-
-				fi # suffix case
+				sips -s format jpeg "${i}" --out "$JPG" 2>&1 | tee -a "$LOG"
 
 			fi # if/else magick
 
